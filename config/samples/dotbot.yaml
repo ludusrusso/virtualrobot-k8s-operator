@@ -1,0 +1,7 @@
+apiVersion: robots.ludusrusso.dev/v1alpha1
+kind: VirtualRobot
+metadata:
+  name: virtualrobot-dotbot
+spec:
+  robotName: dotbot
+  baseUrl: dev.ludusrusso.space

@@ -1,0 +1,7 @@
+domain: ludusrusso.dev
+repo: ludusrusso.dev/robot
+resources:
+- group: robots
+  kind: VirtualRobot
+  version: v1alpha1
+version: "2"

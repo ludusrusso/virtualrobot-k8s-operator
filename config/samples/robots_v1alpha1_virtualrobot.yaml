@@ -1,0 +1,7 @@
+apiVersion: robots.ludusrusso.dev/v1alpha1
+kind: VirtualRobot
+metadata:
+  name: virtualrobot-sample
+spec:
+  robotName: vbot1
+  baseUrl: dev.ludusrusso.space

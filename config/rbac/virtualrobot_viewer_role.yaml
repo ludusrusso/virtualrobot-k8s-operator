@@ -1,0 +1,20 @@
+# permissions for end users to view virtualrobots.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: virtualrobot-viewer-role
+rules:
+- apiGroups:
+  - robots.ludusrusso.dev
+  resources:
+  - virtualrobots
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - robots.ludusrusso.dev
+  resources:
+  - virtualrobots/status
+  verbs:
+  - get
