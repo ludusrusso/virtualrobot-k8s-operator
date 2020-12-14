@@ -5,3 +5,19 @@ metadata:
 spec:
   robotName: dotbot
   baseUrl: dev.ludusrusso.space
+---
+apiVersion: robots.ludusrusso.dev/v1alpha1
+kind: VirtualRobot
+metadata:
+  name: virtualrobot-dotbot1
+spec:
+  robotName: dotbot1
+  baseUrl: dev.ludusrusso.space
+---
+apiVersion: robots.ludusrusso.dev/v1alpha1
+kind: VirtualRobot
+metadata:
+  name: virtualrobot-dotbot2
+spec:
+  robotName: dotbot2
+  baseUrl: dev.ludusrusso.space

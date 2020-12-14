@@ -22,7 +22,7 @@ spec:
       type: string
     - jsonPath: .status.url
       name: URL
-      type: integer
+      type: string
     name: v1alpha1
     schema:
       openAPIV3Schema:
@@ -64,7 +64,8 @@ spec:
         type: object
     served: true
     storage: true
-    subresources: {}
+    subresources:
+      status: {}
 status:
   acceptedNames:
     kind: ""

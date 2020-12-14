@@ -41,8 +41,9 @@ type VirtualRobotStatus struct {
 }
 
 // +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Robot",type=string,JSONPath=`.spec.robotName`
-// +kubebuilder:printcolumn:name="URL",type=integer,JSONPath=`.status.url`
+// +kubebuilder:printcolumn:name="URL",type=string,JSONPath=`.status.url`
 
 // VirtualRobot is the Schema for the virtualrobots API
 type VirtualRobot struct {
@@ -54,7 +55,7 @@ type VirtualRobot struct {
 }
 
 // +kubebuilder:object:root=true
-//
+// +kubebuilder:subresource:status
 
 // VirtualRobotList contains a list of VirtualRobot
 type VirtualRobotList struct {

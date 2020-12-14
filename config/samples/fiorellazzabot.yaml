@@ -1,7 +1,7 @@
 apiVersion: robots.ludusrusso.dev/v1alpha1
 kind: VirtualRobot
 metadata:
-  name: virtualrobot-fiorellazza
+  name: fiorellazza
 spec:
-  robotName: fiorellazza-bot
+  robotName: fiorellazza
   baseUrl: dev.ludusrusso.space

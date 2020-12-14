@@ -44,7 +44,7 @@ type VirtualRobotReconciler struct {
 // +kubebuilder:rbac:groups=robots.ludusrusso.dev,resources=virtualrobots/status,verbs=get;update;patch
 
 func (r *VirtualRobotReconciler) Reconcile(req ctrl.Request) (ctrl.Result, error) {
-	ctx := context.Background()
+	ctx := context.TODO()
 	logger := r.Log.WithValues("virtualrobot", req.NamespacedName)
 
 	var vrobot robotsv1alpha1.VirtualRobot
@@ -90,12 +90,14 @@ func (r *VirtualRobotReconciler) Reconcile(req ctrl.Request) (ctrl.Result, error
 	}
 
 	vrobot.Status.URL = host
-	fmt.Printf("Updaring vrobot: %v - %v\n\n", vrobot.Name, host)
 
-	// err = r.Status().Update(ctx, &vrobot)
-	// if err != nil {
-	// 	return ctrl.Result{}, err
-	// }
+	fmt.Printf("Host: %v in %v\n\n", vrobot.Name, vrobot.Namespace)
+	err = r.Client.Status().Update(ctx, &vrobot)
+	if err != nil {
+		logger.Error(err, "\n\n\n\nError\n\n\n\n")
+
+		return ctrl.Result{}, err
+	}
 
 	logger.Info("Done")
 
@@ -230,5 +232,5 @@ func (r *VirtualRobotReconciler) SetupWithManager(mgr ctrl.Manager) error {
 }
 
 func buildName(vrobot robotsv1alpha1.VirtualRobot) string {
-	return fmt.Sprintf("%v-%v", vrobot.ObjectMeta.UID, vrobot.Spec.RobotName)
+	return fmt.Sprintf("%v", vrobot.Spec.RobotName)
 }
